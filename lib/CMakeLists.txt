@@ -1,2 +1,2 @@
 
-add_subdirectory(tusclient)
+add_subdirectory(ctus)
