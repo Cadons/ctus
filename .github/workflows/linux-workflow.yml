@@ -144,7 +144,7 @@ jobs:
         run: |
           chmod +x build/build/CTUS_test/bin/CTUS_test
           export LD_LIBRARY_PATH=build/build/ctus/lib:$LD_LIBRARY_PATH
-          build/build/CTUS_test/bin/CTUS_test --gtest_output=xml:build/${{ steps.strings.outputs.test-folder }}/test-results.xml
+          build/build/CTUS_test/bin/ctus_test --gtest_output=xml:build/${{ steps.strings.outputs.test-folder }}/test-results.xml
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
