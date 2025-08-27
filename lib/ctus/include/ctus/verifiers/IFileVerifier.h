@@ -16,7 +16,7 @@ namespace TUS::FileVerifier {
     /**
      * @brief The IFileVerifier class provides an interface for verifying files.
      */
-    class EXPORT_LIBTUSCLIENT IFileVerifier {
+    class EXPORT_CTUS IFileVerifier {
     public:
         virtual ~IFileVerifier() = default;
 

@@ -10,7 +10,7 @@
 #include "ctus.h"
 
 namespace TUS::FileVerifier{
-        class EXPORT_LIBTUSCLIENT Md5Verifier : public IFileVerifier
+        class EXPORT_CTUS Md5Verifier : public IFileVerifier
         {
         public:
             Md5Verifier();

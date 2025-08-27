@@ -16,7 +16,7 @@ using std::function;
 
 
 namespace TUS::Http {
-    enum class EXPORT_LIBTUSCLIENT HttpMethod {
+    enum class EXPORT_CTUS HttpMethod {
         _GET,
         _POST,
         _PUT,
@@ -29,7 +29,7 @@ namespace TUS::Http {
     /**
      * @brief Represents a HTTP request
      */
-    class EXPORT_LIBTUSCLIENT Request {
+    class EXPORT_CTUS Request {
     public:
         using SuccessCallback = std::function<void(std::string header, std::string data)>;
         using ErrorCallback = std::function<void(std::string header, std::string data)>;

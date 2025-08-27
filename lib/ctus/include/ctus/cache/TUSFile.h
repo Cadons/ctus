@@ -23,7 +23,7 @@ namespace TUS::Cache {
      * the size of the full file and the application name that created the record.
      * This class provides methods for storing and retrieving data from the cache.
      */
-    class EXPORT_LIBTUSCLIENT TUSFile {
+    class EXPORT_CTUS TUSFile {
     public:
         /**
          * @brief Construct a new TUSFile object.

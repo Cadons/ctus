@@ -20,7 +20,7 @@
 
 
 namespace TUS::Http {
-    struct EXPORT_LIBTUSCLIENT Progress {
+    struct EXPORT_CTUS Progress {
         char *data;
         size_t size;
     };
@@ -28,7 +28,7 @@ namespace TUS::Http {
     /**
      * @brief Represents a HTTP client
      */
-    class EXPORT_LIBTUSCLIENT HttpClient : public IHttpClient {
+    class EXPORT_CTUS HttpClient : public IHttpClient {
     public:
         HttpClient();
 

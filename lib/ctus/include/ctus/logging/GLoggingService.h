@@ -13,7 +13,7 @@
 
 
 namespace TUS::Logging {
-class EXPORT_LIBTUSCLIENT GLoggingService : public ILogger {
+class EXPORT_CTUS GLoggingService : public ILogger {
   public:
     explicit GLoggingService(LogLevel level);
     ~GLoggingService() override;

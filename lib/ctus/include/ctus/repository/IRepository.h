@@ -13,7 +13,7 @@
 
 namespace TUS::Repository {
     template<typename T>
-    class EXPORT_LIBTUSCLIENT IRepository {
+    class EXPORT_CTUS IRepository {
     public:
         virtual ~IRepository() = default;
 

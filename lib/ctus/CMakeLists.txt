@@ -20,8 +20,8 @@ target_include_directories(ctus PUBLIC
 # Link libraries
 target_link_libraries(ctus PUBLIC CURL::libcurl Boost::uuid Boost::lexical_cast nlohmann_json::nlohmann_json glog::glog fmt::fmt)
 if(BUILD_SHARED_LIBS)
-    target_compile_definitions(ctus PRIVATE ctus_EXPORTS)
-    target_compile_definitions(ctus PRIVATE ctus_SHARED)
+    target_compile_definitions(ctus PRIVATE CTUS_EXPORTS)
+    target_compile_definitions(ctus PRIVATE CTUS_SHARED)
 endif ()
 # Enable testing if tests exist
 include(CTest)

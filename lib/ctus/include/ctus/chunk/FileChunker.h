@@ -28,7 +28,7 @@ namespace TUS::Chunk {
      * To get the chunks, the loadChunks method must be called and you can get the chunks with the getChunks method,
      * which returns a vector of TUSChunk objects.
      */
-    class EXPORT_LIBTUSCLIENT FileChunker : public IFileChunker<TUSChunk>, public FileVerifier::IFileVerifier {
+    class EXPORT_CTUS FileChunker : public IFileChunker<TUSChunk>, public FileVerifier::IFileVerifier {
     private:
         const string CHUNK_FILE_NAME_PREFIX = "_chunk_";
         const string CHUNK_FILE_EXTENSION = ".bin";

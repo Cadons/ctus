@@ -14,7 +14,7 @@ namespace TUS::Chunk::Utility {
     /**
      * @brief The ChunkUtility class provides utility methods for working with chunks.
      */
-    class EXPORT_LIBTUSCLIENT ChunkUtility {
+    class EXPORT_CTUS ChunkUtility {
     public:
         /**
          * @brief Get the chunk size in GB.

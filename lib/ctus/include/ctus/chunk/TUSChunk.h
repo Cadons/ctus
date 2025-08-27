@@ -19,7 +19,7 @@ namespace TUS::Chunk {
      * This class represents a chunk of a TUS file. A chunk is a part of a file
      * that is uploaded to the server in a single request.
      */
-    class EXPORT_LIBTUSCLIENT TUSChunk {
+    class EXPORT_CTUS TUSChunk {
     public:
         /**
          * @brief Construct a TUSChunk object.

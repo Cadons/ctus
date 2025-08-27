@@ -23,9 +23,9 @@ namespace TUS::Test {
         const std::string URL = "http://localhost:8080/files/";
         Logging::LogLevel logLevel = Logging::LogLevel::_DEBUG_;
 
-        static std::filesystem::path generateTestFile(int size = 10);
+        static path generateTestFile(int size = 10);
 
-        static std::filesystem::path generateSimpleFile();
+        static path generateSimpleFile();
 
         void SetUp() override {
             std::cout << "URL: " << URL << std::endl;
@@ -50,7 +50,7 @@ namespace TUS::Test {
         }
     }
 
-    std::filesystem::path TusClientTest::generateTestFile(int size) {
+    path TusClientTest::generateTestFile(int size) {
         std::random_device rd;
         std::mt19937 gen(rd());
         std::uniform_int_distribution dis(0, 255);
@@ -87,7 +87,7 @@ namespace TUS::Test {
         return "test.zip";
     }
 
-    std::filesystem::path TusClientTest::generateSimpleFile() {
+    path TusClientTest::generateSimpleFile() {
         std::ofstream testFile("test.txt");
         testFile << "Hello World";
         return "test.txt";

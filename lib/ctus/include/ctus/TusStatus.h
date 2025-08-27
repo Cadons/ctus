@@ -10,7 +10,7 @@
 #include "ctus.h"
 
 namespace TUS {
-    enum class EXPORT_LIBTUSCLIENT TusStatus {
+    enum class EXPORT_CTUS TusStatus {
         READY,
         UPLOADING,
         FAILED,

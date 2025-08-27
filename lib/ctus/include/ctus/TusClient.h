@@ -54,7 +54,7 @@ namespace TUS {
      * @brief The ITusClient class represents an interface for a client for
      * uploading files using the TUS protocol.
      */
-    class EXPORT_LIBTUSCLIENT ITusClient {
+    class EXPORT_CTUS ITusClient {
     public:
         virtual ~ITusClient() = default;
 
@@ -96,7 +96,7 @@ namespace TUS {
      * @brief The TusClient class represents a client for uploading files using the
      * TUS protocol.
      */
-    class EXPORT_LIBTUSCLIENT TusClient : public ITusClient {
+    class EXPORT_CTUS TusClient : public ITusClient {
     private:
         using OnSuccessCallback = std::function<void(std::string, std::string)>;
         using OnErrorCallback = std::function<void(std::string, std::string)>;

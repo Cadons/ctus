@@ -23,7 +23,7 @@ set(CTUS_HEADERS
 )
 
 set(CTUS_SOURCES
-    src/ctus/ctus.cpp
+    src/ctus/TusClient.cpp
     src/ctus/cache/CacheRepository.cpp
     src/ctus/cache/TUSFile.cpp
     src/ctus/chunk/FileChunker.cpp

@@ -20,7 +20,7 @@ namespace TUS::Http {
      * It provides methods for performing various HTTP methods such as GET, POST, PUT, PATCH, DELETE, HEAD, and OPTIONS.
      * It also provides a method for aborting a request.
      */
-    class EXPORT_LIBTUSCLIENT IHttpClient {
+    class EXPORT_CTUS IHttpClient {
     public:
         /**
          * @brief Perform a GET request.

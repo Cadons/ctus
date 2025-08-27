@@ -21,7 +21,7 @@ namespace TUS::Logging {
     /**
      * @brief Interface for logging
      */
-    class EXPORT_LIBTUSCLIENT ILogger {
+    class EXPORT_CTUS ILogger {
     public:
         virtual void setLevel(LogLevel level) = 0;
 

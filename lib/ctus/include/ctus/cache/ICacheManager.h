@@ -22,7 +22,7 @@ namespace TUS {
      * from the cache.
      */
 
-    class EXPORT_LIBTUSCLIENT ICacheManager {
+    class EXPORT_CTUS ICacheManager {
     public:
         virtual ~ICacheManager() = default;
 

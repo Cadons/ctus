@@ -17,7 +17,7 @@ namespace TUS::Cache {
      * The repository stores TUSFile objects in a cache file.
      */
 
-    class EXPORT_LIBTUSCLIENT CacheRepository : public Repository::IRepository<TUSFile> {
+    class EXPORT_CTUS CacheRepository : public Repository::IRepository<TUSFile> {
     public:
         explicit CacheRepository(std::string appName, bool clearCache = false);
         static std::shared_ptr<CacheRepository> create(std::string appName, bool clearCache = false);

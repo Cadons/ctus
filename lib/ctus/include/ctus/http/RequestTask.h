@@ -12,7 +12,7 @@
 
 
 namespace TUS::Http {
-    struct EXPORT_LIBTUSCLIENT RequestTask : public Request {
+    struct EXPORT_CTUS RequestTask : public Request {
         CURL *curl;
 
         RequestTask(const Request &request, CURL *curl);
