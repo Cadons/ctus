@@ -78,7 +78,7 @@ jobs:
         run: cmake --build build --target ctus --config ${{ steps.strings.outputs.build-type }}
 
       - name: Build Tests
-        run: cmake --build build --target ctus_test --config ${{ steps.strings.outputs.build-type }}
+        run: cmake --build build --target CTUS_test --config ${{ steps.strings.outputs.build-type }}
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
@@ -92,7 +92,7 @@ jobs:
           name: build-artifacts-for-test-mac
           path: |
             build/build/ctus/lib/libctus.dylib
-            build/build/ctus_test/bin/ctus_test
+            build/build/CTUS_test/bin/CTUS_test
 
   test-mac:
     needs: build-mac
@@ -142,9 +142,9 @@ jobs:
 
       - name: Test Project
         run: |
-          chmod +x build/build/ctus_test/bin/ctus_test
+          chmod +x build/build/CTUS_test/bin/CTUS_test
           export DYLD_LIBRARY_PATH=build/build/ctus/lib:$DYLD_LIBRARY_PATH
-          build/build/ctus_test/bin/ctus_test --gtest_output=xml:build/${{ steps.strings.outputs.test-folder }}/test-results.xml
+          build/build/CTUS_test/bin/CTUS_test --gtest_output=xml:build/${{ steps.strings.outputs.test-folder }}/test-results.xml
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
