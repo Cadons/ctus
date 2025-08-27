@@ -79,7 +79,7 @@ jobs:
           cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=${{ matrix.vcpkg_root }}/scripts/buildsystems/vcpkg.cmake -DCMAKE_BUILD_TYPE=${{ steps.strings.outputs.build-type }}
 
       - name: Build Library
-        run: cmake --build build --target tusclient --config ${{ steps.strings.outputs.build-type }}
+        run: cmake --build build --target ctest --config ${{ steps.strings.outputs.build-type }}
 
       - name: Build Tests
         run: cmake --build build --target tusclient_test --config ${{ steps.strings.outputs.build-type }}
@@ -88,15 +88,15 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-artifacts-linux
-          path: build/build/tusclient/lib/libtusclient.so
+          path: build/build/ctest/lib/libtusclient.so
 
       - name: Upload artifacts for test
         uses: actions/upload-artifact@v4
         with:
           name: build-artifacts-for-test
           path: |
-            build/build/tusclient/lib/libtusclient.so
-            build/build/tusclient_test/bin/tusclient_test
+            build/build/ctest/lib/libctest.so
+            build/build/ctest/bin/ctest_test
 
   test-linux:
     needs: build-linux
@@ -143,7 +143,7 @@ jobs:
         if: ${{ matrix.os == 'ubuntu-latest' }}
         run: |
           chmod +x build/build/tusclient_test/bin/tusclient_test
-          export LD_LIBRARY_PATH=build/build/tusclient/lib:$LD_LIBRARY_PATH
+          export LD_LIBRARY_PATH=build/build/ctest/lib:$LD_LIBRARY_PATH
           build/build/tusclient_test/bin/tusclient_test --gtest_output=xml:build/${{ steps.strings.outputs.test-folder }}/test-results.xml
 
       - name: Upload test results

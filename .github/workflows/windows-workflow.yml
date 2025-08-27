@@ -1,4 +1,4 @@
-name: libtusclient CI Windows
+name: libctus CI Windows
 
 on:
   pull_request:
@@ -75,30 +75,30 @@ jobs:
         run: |
           cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE="vcpkg\scripts\buildsystems\vcpkg.cmake" -DCMAKE_BUILD_TYPE=${{ steps.strings.outputs.build-type }}
       - name: Build Library
-        run: cmake --build build --target tusclient --config ${{ steps.strings.outputs.build-type }}
+        run: cmake --build build --target ctus --config ${{ steps.strings.outputs.build-type }}
 
       - name: Copy library folder content to test build folder
         run: |
-            if (!(Test-Path -Path "build/build/tusclient_test")) {
-                New-Item -ItemType Directory -Path "build/build/tusclient_test"
+            if (!(Test-Path -Path "build/build/ctus_test")) {
+                New-Item -ItemType Directory -Path "build/build/ctus_test"
             }
-            Copy-Item -Path "build/build/tusclient/bin/*" -Destination "build/build/tusclient_test/bin" -Recurse -Force
+            Copy-Item -Path "build/build/ctus/bin/*" -Destination "build/build/ctus_test/bin" -Recurse -Force
 
       - name: Build Tests
-        run: cmake --build build --target tusclient_test --config ${{ steps.strings.outputs.build-type }}
+        run: cmake --build build --target ctus_test --config ${{ steps.strings.outputs.build-type }}
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
           name: build-artifacts-windows
-          path: build/build/tusclient/bin/
+          path: build/build/ctus/bin/
 
       - name: Upload artifacts for test
         uses: actions/upload-artifact@v4
         with:
           name: build-artifacts-for-test
           path: |
-            build/build/tusclient_test/bin/
+            build/build/ctus_test/bin/
 
   test-windows:
     needs: build-windows
@@ -130,4 +130,4 @@ jobs:
 
       - name: Run Tests
         run: |
-          .\build\build\Debug\tusclient_test.exe --gtest_output=xml:test-results.xml
+          .\build\build\Debug\ctus_test.exe --gtest_output=xml:test-results.xml
