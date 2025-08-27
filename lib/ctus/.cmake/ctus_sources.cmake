@@ -1,0 +1,50 @@
+set(CTUS_HEADERS
+    include/ctus/ctus.h
+    include/ctus/TusStatus.h
+    include/ctus/cache/CacheRepository.h
+    include/ctus/cache/ICacheManager.h
+    include/ctus/cache/TUSFile.h
+    include/ctus/chunk/FileChunker.h
+    include/ctus/chunk/IFileChunker.h
+    include/ctus/chunk/TUSChunk.h
+    include/ctus/chunk/utility/ChunkUtility.h
+    include/ctus/config.h
+    include/ctus/exceptions/TUSException.h
+    include/ctus/http/HttpClient.h
+    include/ctus/http/IHttpClient.h
+    include/ctus/http/Request.h
+    include/ctus/http/RequestTask.h
+    include/ctus/ctus.h
+    include/ctus/logging/GLoggingService.h
+    include/ctus/logging/ILogger.h
+    include/ctus/repository/IRepository.h
+    include/ctus/verifiers/IFileVerifier.h
+    include/ctus/verifiers/Md5Verifier.h
+)
+
+set(CTUS_SOURCES
+    src/ctus/TusClient.cpp
+    src/ctus/cache/CacheRepository.cpp
+    src/ctus/cache/TUSFile.cpp
+    src/ctus/chunk/FileChunker.cpp
+    src/ctus/chunk/TUSChunk.cpp
+    src/ctus/chunk/utility/ChunkUtility.cpp
+    src/ctus/http/HttpClient.cpp
+    src/ctus/http/Request.cpp
+    src/ctus/http/RequestTask.cpp
+    src/ctus/ctus.cpp
+    src/ctus/logging/GLoggingService.cpp
+    src/ctus/verifiers/Md5Verifier.cpp
+)
+
+set(CTUS_TEST_SOURCES
+    FileChunkerTest.cpp
+    TusClientTest.cpp
+    http/HttpClientTest.cpp
+    main.cpp
+    repository/CacheRepositoryTest.cpp
+    verifiers/FileVerifiersTest.cpp
+)
+
+set(CTUS_RESOURCES
+)
