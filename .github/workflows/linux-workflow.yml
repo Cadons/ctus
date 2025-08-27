@@ -1,4 +1,4 @@
-name: libtusclient CI Linux
+name: libctus CI Linux
 
 on:
   pull_request:
@@ -79,16 +79,16 @@ jobs:
           cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=${{ matrix.vcpkg_root }}/scripts/buildsystems/vcpkg.cmake -DCMAKE_BUILD_TYPE=${{ steps.strings.outputs.build-type }}
 
       - name: Build Library
-        run: cmake --build build --target ctest --config ${{ steps.strings.outputs.build-type }}
+        run: cmake --build build --target ctus --config ${{ steps.strings.outputs.build-type }}
 
       - name: Build Tests
-        run: cmake --build build --target tusclient_test --config ${{ steps.strings.outputs.build-type }}
+        run: cmake --build build --target ctus_test --config ${{ steps.strings.outputs.build-type }}
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
           name: build-artifacts-linux
-          path: build/build/ctest/lib/libtusclient.so
+          path: build/build/ctest/lib/libctus.so
 
       - name: Upload artifacts for test
         uses: actions/upload-artifact@v4
@@ -142,9 +142,9 @@ jobs:
       - name: Test Project
         if: ${{ matrix.os == 'ubuntu-latest' }}
         run: |
-          chmod +x build/build/tusclient_test/bin/tusclient_test
+          chmod +x build/build/ctus_test/bin/ctus_test
           export LD_LIBRARY_PATH=build/build/ctest/lib:$LD_LIBRARY_PATH
-          build/build/tusclient_test/bin/tusclient_test --gtest_output=xml:build/${{ steps.strings.outputs.test-folder }}/test-results.xml
+          build/build/ctus_test/bin/ctus_test --gtest_output=xml:build/${{ steps.strings.outputs.test-folder }}/test-results.xml
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
