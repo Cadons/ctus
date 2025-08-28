@@ -96,7 +96,7 @@ jobs:
           name: build-artifacts-for-test
           path: |
             build/build/ctus/lib/libctus.so
-            build/build/ctus/bin/CTUS_test
+            build/build/CTUS_test/bin/CTUS_test
 
   test-linux:
     needs: build-linux
