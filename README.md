@@ -197,10 +197,9 @@ int main() {
     return 0;
 }
 ```
-
 --- 
 
 We encourage you to submit improvements, bug fixes, or new features via pull requests. If you have a bug report or feature request, feel free to open an issue on the repository page.
-
+  
 ---
 This library is distributed under [MIT License](LICENSE) 
