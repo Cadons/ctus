@@ -8,7 +8,7 @@
 #include <boost/uuid/detail/md5.hpp>
 #include <boost/uuid/uuid_io.hpp>
 #include <iomanip>
-#include <fmt/core.h>
+#include <fmt/format.h>
 #include "verifiers/Md5Verifier.h"
 
 

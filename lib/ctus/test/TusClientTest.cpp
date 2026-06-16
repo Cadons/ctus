@@ -11,7 +11,7 @@
 #include <filesystem>
 #include <thread>
 #include <chrono>
-#include <fmt/core.h>
+#include <fmt/format.h>
 #include "TusClient.h"
 
 /**
