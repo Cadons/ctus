@@ -10,6 +10,7 @@
 #include <filesystem>
 
 #include "IFileChunker.h"
+#include "TUSChunk.h"
 #include "verifiers/IFileVerifier.h"
 
 #include "ctus.h"
@@ -20,7 +21,6 @@ using std::filesystem::path;
 
 
 namespace TUS::Chunk {
-    class TUSChunk;
     /**
      * @brief This class is responsible for chunking a file into multiple chunks.
      * The chunks are stored in a temporary directory and can be loaded from there.
